@@ -26,6 +26,14 @@ Took around 4 hours to complete. The code for other parts of this project are pr
   * `AXProfile` includes a `WKWebViewConfiguration` along with an array of `AXTabGroups`.
   * `AXWebContainerView` has a function called `swapWebView(_ webView: AXWebView)` which as in the name, switches the current web view being used.
   * `AXWindow` is an NSWindow subclass which holds all the views together. Except for the `AXProfiles`
+
+## Additional Information
+* You may have seen that there are no navigation buttons (back/forward/refresh) that is because it is a swipe based gesture now. Simply swipe on the left hand side of the toolbar. The direction is intuitive!
+* Backwards : Swipe Left
+* Forward : Swipe Right
+* Reload : Swipe Down
+* Cancel : Swipe up (If you accidentally swiped)
+* New Tab : Command-T
  
 ## Photos
 
