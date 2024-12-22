@@ -28,15 +28,30 @@ Took around 4 hours to complete. The code for other parts of this project are pr
   * `AXWindow` is an NSWindow subclass which holds all the views together. Except for the `AXProfiles`
  
 ## Photos
+
 <img width="1512" alt="1" src="https://github.com/user-attachments/assets/bb33de57-7bef-475f-ae64-2bc9cd0d13d1" />
+
+> Normal Width
+
+<br />
+
 <img width="1511" alt="2" src="https://github.com/user-attachments/assets/3240750d-7c74-4097-80f7-c134efb9c930" />
+
+> Smaller Width + More Tabs
+
+<br />
+
 <img width="1512" alt="3" src="https://github.com/user-attachments/assets/549fbdc5-5628-4a2d-810c-64cee71ec971" />
+
+> Scrollable Tab Bar  
+> Tab is stickied to the right
+
+<br />
+
 <img width="1512" alt="4" src="https://github.com/user-attachments/assets/4bd9382f-bf1f-4b72-8cad-3a4727ea819f" />
 
+> Tab is stickied to the left
+
+
 ## Video
-https://github.com/user-attachments/assets/6abdca1e-94da-4406-a9ad-aee7860e37b4
-
-
-
-
-
+https://github.com/user-attachments/assets/6b6034a1-7ea5-4a48-bd91-b83feb2d4b6d
