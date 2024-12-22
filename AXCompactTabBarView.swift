@@ -27,15 +27,14 @@ class AXCompactTabBarView: NSView, AXTabBarViewTemplate {
     var tabGroup: AXTabGroup!
     var delegate: (any AXTabBarViewDelegate)?
     var stickyDelegate: (any AXCompactTabBarViewDelegate)?
-    private var hasDrawn = false
-    
+
     private let minTabWidth: CGFloat = 90
     private let maxTabWidth: CGFloat = 250
     private var widthOfCurrentBounds: CGFloat = 0
     private var lastTabCount: Int = 0
 
     internal lazy var tabStackView = NSStackView()
-    
+
     private lazy var scrollView: AXScrollView = {
         let scroll = AXScrollView(frame: self.bounds)
         scroll.drawsBackground = false
@@ -55,11 +54,14 @@ class AXCompactTabBarView: NSView, AXTabBarViewTemplate {
     private var lastScrollPosition: CGFloat = 0
     private var firstTabInitialFrame: CGRect?
 
-    override func viewWillDraw() {
-        guard !hasDrawn else { return }
-        defer { hasDrawn = true }
+    init() {
+        super.init(frame: .zero)
         configure()
         widthOfCurrentBounds = bounds.width
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func layout() {
@@ -68,7 +70,8 @@ class AXCompactTabBarView: NSView, AXTabBarViewTemplate {
         let currentWidth = bounds.width
         let currentTabCount = tabStackView.arrangedSubviews.count
 
-        if currentWidth != widthOfCurrentBounds || currentTabCount != lastTabCount
+        if currentWidth != widthOfCurrentBounds
+            || currentTabCount != lastTabCount
         {
             super.layout()
             updateTabWidths()
@@ -286,7 +289,7 @@ class AXCompactTabBarView: NSView, AXTabBarViewTemplate {
         // Reset initial frames when adding new tabs
         firstTabInitialFrame = nil
     }
-    
+
     func tabButtonActiveTitleChanged(
         _ newTitle: String, for tabButton: AXTabButton
     ) {
@@ -350,7 +353,7 @@ class AXCompactTabBarView: NSView, AXTabBarViewTemplate {
             .isSelected = true
 
         delegate?.tabBarSwitchedTo(tabAt: tabGroup.selectedIndex)
-        
+
         // Sticky Tab stuff
         stickyDelegate?.tabBarShouldRemoveSticky()
         updateTabWidths()
@@ -405,7 +408,7 @@ extension AXCompactTabBarView {
 
         lastScrollPosition = scrollPosition
     }
-    
+
     private func updateTabWidths() {
         let availableWidth = bounds.width - 55
         let tabCount = CGFloat(tabStackView.arrangedSubviews.count)

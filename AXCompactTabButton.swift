@@ -35,8 +35,6 @@ class AXCompactTabButton: NSButton, AXTabButton {
     var tab: AXTab!
     var delegate: (any AXTabButtonDelegate)?
 
-    private var hasDrawn = false
-
     private var closeButton = AXCompactTabCloseButton()
     var titleView = NSTextField()
 
@@ -86,16 +84,14 @@ class AXCompactTabButton: NSButton, AXTabButton {
         layer?.shadowOffset = CGSize(width: 0, height: 0)  // Shadow below the button
 
         setTrackingArea()
+        setupViews()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewWillDraw() {
-        guard !hasDrawn else { return }
-        defer { hasDrawn = true }
-
+    func setupViews() {
         if isSelected {
             self.layer?.backgroundColor =
                 AXCompactTabButtonConstants.selectedColor.cgColor
@@ -160,6 +156,8 @@ class AXCompactTabButton: NSButton, AXTabButton {
     }
 
     override func mouseDown(with event: NSEvent) {
+        closeButton.hideCloseButton()
+
         NSAnimationContext.runAnimationGroup { context in
             context.duration = 0.1
             self.animator().layer?.setAffineTransform(
@@ -189,7 +187,7 @@ class AXCompactTabButton: NSButton, AXTabButton {
             self.layer?.backgroundColor =
                 AXCompactTabButtonConstants.hoverColor.cgColor
         }
-
+        
         closeButton.showCloseButton()
     }
 
