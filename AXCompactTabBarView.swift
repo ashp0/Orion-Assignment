@@ -159,6 +159,7 @@ class AXCompactTabBarView: NSView, AXTabBarViewTemplate {
     func removeTabButton(at index: Int) {
         let button = tabStackView.arrangedSubviews[index] as! AXTabButton
         self.updateIndices(after: index)
+        tabWidthConstraints.remove(at: index)
 
         // Slides in from the right and then goes to the left, underneath the stackView making it look like it's going kinda inwards
         NSAnimationContext.runAnimationGroup(
