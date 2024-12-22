@@ -36,6 +36,7 @@ Took around 4 hours to complete. The code for other parts of this project are pr
 * New Tab : Command-T
  
 ## Photos
+This is a slightly older version, the back/forward buttons are removed in replace for a gesture based navigation control.
 
 <img width="1512" alt="1" src="https://github.com/user-attachments/assets/bb33de57-7bef-475f-ae64-2bc9cd0d13d1" />
 
