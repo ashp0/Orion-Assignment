@@ -1,6 +1,9 @@
 # Orion Compact Tab Bar Assignment
 Took around 4 hours to complete. The code for other parts of this project are private, but you are able to view it via Zoom or Google Meet with me.
 
+# Update
+I spent a bit of more time on this, I ported the horizontal tab bar from NSView to NSToolbar. In the very bottom, I have uploaded the updated images with the NSToolBar.
+
 ## Checklist
 - [x] All non selected tabs should share the same width.
 - [x] Tabs should become scrollable when the browser is at minimum width.
@@ -34,6 +37,14 @@ Took around 4 hours to complete. The code for other parts of this project are pr
 * Reload : Swipe Down
 * Cancel : Swipe up (If you accidentally swiped)
 * New Tab : Command-T
+
+## UPDATE!!
+
+<img width="1624" alt="Screenshot 2024-12-30 at 4 37 16 PM" src="https://github.com/user-attachments/assets/6a951f1b-6926-4bbb-b50d-8a4266ecccd7" />
+
+<img width="1493" alt="Screenshot 2024-12-30 at 4 37 50 PM" src="https://github.com/user-attachments/assets/a9c5d6aa-b07f-45db-9825-71e01dafc071" />
+
+<img width="1493" alt="Screenshot 2024-12-30 at 4 38 04 PM" src="https://github.com/user-attachments/assets/9bb84938-17a2-41e2-8e6f-154db55e720f" />
  
 ## Photos
 This is a slightly older version, the back/forward buttons are removed in replace for a gesture based navigation control.
@@ -64,3 +75,4 @@ This is a slightly older version, the back/forward buttons are removed in replac
 
 ## Video
 https://github.com/user-attachments/assets/6b6034a1-7ea5-4a48-bd91-b83feb2d4b6d
+
